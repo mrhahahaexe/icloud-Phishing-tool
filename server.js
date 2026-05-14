@@ -52,8 +52,8 @@ app.get('/api/users', async (req, res) => {
   }
 });
 
-// Serve Frontend
-app.get('/*', (req, res) => {
+// Serve Frontend (Express 5 compatible)
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
