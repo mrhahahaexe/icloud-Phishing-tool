@@ -52,10 +52,20 @@ app.get('/api/users', async (req, res) => {
   }
 });
 
-// Serve Frontend (Express 5 compatible)
+// Admin Routes
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'admin.html'));
+});
+
+app.get('/admin-login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'admin-login.html'));
+});
+
+// Serve Frontend (Express 5 compatible catch-all)
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
+
 
 
 app.listen(port, () => {
