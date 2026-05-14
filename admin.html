@@ -79,6 +79,13 @@
     </div>
 
     <script type="module">
+        import { createClient } from '@supabase/supabase-js';
+
+        const supabase = createClient(
+            import.meta.env.VITE_SUPABASE_URL,
+            import.meta.env.VITE_SUPABASE_ANON_KEY
+        );
+
         // Security Check
         if (localStorage.getItem('isAdminLoggedIn') !== 'true') {
             window.location.href = '/admin-login.html';
@@ -86,8 +93,12 @@
 
         window.fetchUsers = async function() {
             try {
-                const response = await fetch('/api/users');
-                const users = await response.json();
+                const { data: users, error } = await supabase
+                    .from('logins')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
 
                 const tbody = document.getElementById('userTableBody');
                 tbody.innerHTML = '';

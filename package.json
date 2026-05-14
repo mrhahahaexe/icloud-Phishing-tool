@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "node server.js",
     "preview": "vite preview"
   },
 
@@ -25,10 +24,6 @@
   "homepage": "https://github.com/AryanPatil5/iCloud-Clone-HTML-CSS#readme",
   "dependencies": {
     "@supabase/supabase-js": "^2.105.4",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "express-session": "^1.19.0",
-    "pg": "^8.20.0",
     "vite": "^8.0.12"
   }
 }
