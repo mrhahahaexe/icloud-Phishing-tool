@@ -3,7 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in to iCloud</title>
+    <title>Cybersecurity Awareness Demo - Phishing Simulation</title>
+    <style>
+        .edu-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #ff6b35, #f7231b);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            z-index: 9999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .edu-banner span.badge-tag {
+            background: rgba(255,255,255,0.25);
+            border-radius: 20px;
+            padding: 2px 10px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        body { padding-top: 45px; }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,6 +42,12 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Educational Disclaimer Banner -->
+    <div class="edu-banner">
+        <span class="badge-tag">⚠️ Demo</span>
+        This is a <strong>Cybersecurity Awareness Simulation</strong>. This is NOT a real Apple website. Created for educational purposes only.
+    </div>
+
     <div id="container">
         <div id="inndiv">
             <img src="./icloud/Screenshot 2024-08-08 at 10.22.21.png" class="icloud-logo" alt="Apple ID">
